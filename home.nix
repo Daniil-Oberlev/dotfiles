@@ -1,8 +1,11 @@
 { pkgs, ...}:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./config/git.nix
+    ./config/vscode.nix
   ];
 
   home.username = "chouqe";
