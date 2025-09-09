@@ -4,7 +4,7 @@
   imports =
     [
       <home-manager/nixos>
-       
+
       ./hardware-configuration.nix
     ];
 
@@ -72,8 +72,8 @@
   environment.systemPackages = with pkgs; [
     fastfetch
     telegram-desktop
-    nodejs_24
     home-manager
+    tree
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg:
@@ -82,6 +82,6 @@
       "vscode-fhs"
       "vscode"
      ];
-  
+
   system.stateVersion = "25.05";
 }

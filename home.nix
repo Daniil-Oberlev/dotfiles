@@ -6,6 +6,8 @@
   imports = [
     ./config/git.nix
     ./config/vscode.nix
+
+    ./config/development
   ];
 
   home.username = "chouqe";
