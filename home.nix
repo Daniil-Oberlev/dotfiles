@@ -4,9 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./config/git.nix
-    ./config/vscode.nix
-
+    ./config/gui
     ./config/development
   ];
 

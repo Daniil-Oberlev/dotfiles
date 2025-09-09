@@ -67,11 +67,9 @@
     ];
   };
 
-  programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
     fastfetch
-    telegram-desktop
     home-manager
     tree
   ];
