@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    docker_28
     rustc
     cargo
     rustfmt

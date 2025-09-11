@@ -72,7 +72,22 @@
     fastfetch
     home-manager
     tree
+    llvmPackages_21.libcxxClang
+    linuxHeaders
+    docker
   ];
+
+  systemd.services.docker = {
+    enable = true;
+    description = "Docker Daemon";
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.docker}/bin/dockerd";
+      Restart = "always";
+      ExecStartPre = "${pkgs.docker}/bin/dockerd --check-config";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (pkgs.lib.getName pkg) [
